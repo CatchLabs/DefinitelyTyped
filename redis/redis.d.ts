@@ -115,6 +115,10 @@ declare module "redis" {
          "persist", "slaveof", "debug", "config", "subscribe", "unsubscribe", "psubscribe", "punsubscribe", "publish", "watch", "unwatch", "cluster",
          "restore", "migrate", "dump", "object", "client", "eval", "evalsha"], require("./lib/commands"));
          */
+         
+        getAsync(...args: any[]): Promise<string | null>
+        setAsync(key: string, value: string): Promise<string>
+        setexAsync(key: string, expiration: number, value: string): Promise<string>
 
         get(args:any[], callback?:ResCallbackT<string>): boolean;
         get(...args:any[]): boolean;
